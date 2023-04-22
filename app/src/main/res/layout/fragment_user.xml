@@ -11,11 +11,12 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         app:srcCompat="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/users_avatar"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_firstName"/>
+        app:layout_constraintBottom_toTopOf="@id/tv_firstName" />
 
     <TextView
         android:id="@+id/tv_firstName"

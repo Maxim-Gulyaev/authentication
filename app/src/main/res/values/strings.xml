@@ -3,4 +3,5 @@
     <string name="login">login</string>
     <string name="password">password</string>
     <string name="enter">enter</string>
+    <string name="users_avatar">users avatar</string>
 </resources>
