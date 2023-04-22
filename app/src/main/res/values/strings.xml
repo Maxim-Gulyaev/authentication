@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">RetrofitAuthentication</string>
-    <string name="login">login</string>
+    <string name="username">username</string>
     <string name="password">password</string>
     <string name="enter">enter</string>
     <string name="users_avatar">users avatar</string>
+    <string name="quit">quit</string>
 </resources>

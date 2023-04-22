@@ -1,4 +1,14 @@
 package android.maxim.retrofitauthentication.navigator
 
-class Navigator {
+import androidx.fragment.app.Fragment
+
+fun Fragment.navigator(): Navigator {
+    return requireActivity() as Navigator
+}
+
+interface Navigator {
+
+    fun goToUserScreen()
+
+    fun goToAuthScreen()
 }
