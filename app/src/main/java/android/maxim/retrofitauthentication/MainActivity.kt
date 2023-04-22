@@ -1,5 +1,6 @@
-package android.maxim.myapplication
+package android.maxim.retrofitauthentication
 
+import android.maxim.myapplication.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 

@@ -1,4 +1,4 @@
-package android.maxim.myapplication.ui.userscreen
+package android.maxim.retrofitauthentication.ui.userscreen
 
 class UserFragmentViewModel {
 }

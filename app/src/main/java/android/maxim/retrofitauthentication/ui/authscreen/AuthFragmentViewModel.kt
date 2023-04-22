@@ -1,4 +1,4 @@
-package android.maxim.myapplication.ui.authscreen
+package android.maxim.retrofitauthentication.ui.authscreen
 
 class AuthFragmentViewModel {
 }

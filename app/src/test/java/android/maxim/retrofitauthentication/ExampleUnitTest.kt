@@ -1,4 +1,4 @@
-package android.maxim.myapplication
+package android.maxim.retrofitauthentication
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package android.maxim.myapplication.navigator
+package android.maxim.retrofitauthentication.navigator
 
 class Navigator {
 }

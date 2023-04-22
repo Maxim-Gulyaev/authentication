@@ -1,4 +1,4 @@
-package android.maxim.myapplication
+package android.maxim.retrofitauthentication
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
