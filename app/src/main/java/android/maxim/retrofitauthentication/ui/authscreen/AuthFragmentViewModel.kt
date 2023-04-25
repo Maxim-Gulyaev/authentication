@@ -1,12 +1,13 @@
 package android.maxim.retrofitauthentication.ui.authscreen
 
+import android.maxim.retrofitauthentication.repository.Repository
 import androidx.lifecycle.ViewModel
 
 class AuthFragmentViewModel: ViewModel() {
 
-    lateinit var username: String
-    lateinit var password: String
+    private val repository = Repository()
 
-
-
+    fun sendRequest(username: String, password: String) {
+        repository.sendRequest(username, password)
+    }
 }

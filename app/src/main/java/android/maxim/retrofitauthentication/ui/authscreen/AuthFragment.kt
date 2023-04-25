@@ -28,6 +28,12 @@ class AuthFragment: Fragment() {
 
     private fun enter() {
         navigator().goToUserScreen()
+        authViewModel.sendRequest(
+            /*binding.tvUsername.text.toString(),
+            binding.tvPassword.text.toString()*/
+        "acharlota",
+            "M9lbMdydMN"
+        )
     }
 
 }
