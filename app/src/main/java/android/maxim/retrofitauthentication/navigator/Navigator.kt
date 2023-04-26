@@ -8,7 +8,7 @@ fun Fragment.navigator(): Navigator {
 
 interface Navigator {
 
-    fun goToUserScreen()
+    fun goToUserScreen(firstName: String, lastName: String, image: String)
 
     fun goToAuthScreen()
 }

@@ -45,7 +45,7 @@ dependencies {
     def retrofit_version = '2.9.0'
     def okHttp_version = '4.10.0'
     def coroutines_version = "1.6.4"
-    def picasso_version = "2.5.2"
+    def picasso_version = "2.71828"
     def lifecycle_version = "2.2.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'

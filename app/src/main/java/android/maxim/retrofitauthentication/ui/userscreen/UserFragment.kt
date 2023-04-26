@@ -3,17 +3,26 @@ package android.maxim.retrofitauthentication.ui.userscreen
 import android.maxim.myapplication.databinding.FragmentUserBinding
 import android.maxim.retrofitauthentication.navigator.navigator
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import com.squareup.picasso.Picasso
 
 class UserFragment: Fragment() {
 
     private lateinit var binding: FragmentUserBinding
-    private val userFragmentViewModel: UserFragmentViewModel by viewModels()
+    var firstName = ""
+    var lastName = ""
+    var image = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        firstName = arguments?.getString(FIRSTNAME).toString()
+        lastName = arguments?.getString(LASTNAME).toString()
+        image = arguments?.getString(IMAGE).toString()
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,11 +43,33 @@ class UserFragment: Fragment() {
     }
 
     private fun showUserData() {
-        userFragmentViewModel.getData()
-        val firstName = userFragmentViewModel.getLiveDataInstance().value?.firstName
-        val lastName = userFragmentViewModel.getLiveDataInstance().value?.lastName
-        binding.tvFirstName.text = firstName.toString()
-        binding.tvLastName.text = lastName.toString()
-        Log.d("karamba", "userFragment.showUserData" + firstName.toString())
+        binding.tvFirstName.text = firstName
+        binding.tvLastName.text = lastName
+        Picasso.get().load(image).into(binding.ivAvatar)
+    }
+
+    companion object {
+        @JvmStatic
+        private val FIRSTNAME = "FIRSTNAME"
+
+        @JvmStatic
+        private val LASTNAME = "LASTNAME"
+
+        @JvmStatic
+        private val IMAGE = "IMAGE"
+
+        fun userFragmentNewInstance(
+            firstName: String,
+            lastName: String,
+            image: String): UserFragment {
+
+            val args = Bundle()
+            args.putString(FIRSTNAME, firstName)
+            args.putString(LASTNAME, lastName)
+            args.putString(IMAGE, image)
+            val fragment = UserFragment()
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity(), Navigator {
         }
     }
 
-    override fun goToUserScreen() {
-        launchFragment(UserFragment())
+    override fun goToUserScreen(firstName: String, lastName: String, image: String) {
+        launchFragment(UserFragment.userFragmentNewInstance(firstName, lastName, image))
     }
 
     override fun goToAuthScreen() {

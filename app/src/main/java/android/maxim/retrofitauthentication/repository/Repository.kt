@@ -36,8 +36,7 @@ class Repository {
         userApi = retrofit.create(UserApi::class.java)
     }
 
-    fun sendRequest(username: String, password: String) {
-        CoroutineScope(Dispatchers.IO).launch {
+    suspend fun sendRequest(username: String, password: String) {
             user = userApi.auth(
                 RequestData(
                     username,
@@ -45,7 +44,7 @@ class Repository {
                 )
             )
             Log.d("karamba", "Repository.sendRequest " + user!!.firstName)
-        }
+
          /*CoroutineScope(Dispatchers.IO).async {
             user = userApi.auth(
                 RequestData(
