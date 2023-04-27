@@ -12,16 +12,15 @@ import com.squareup.picasso.Picasso
 class UserFragment: Fragment() {
 
     private lateinit var binding: FragmentUserBinding
-    var firstName = ""
-    var lastName = ""
-    var image = ""
+    private var firstName = ""
+    private var lastName = ""
+    private var image = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firstName = arguments?.getString(FIRSTNAME).toString()
         lastName = arguments?.getString(LASTNAME).toString()
         image = arguments?.getString(IMAGE).toString()
-
     }
 
     override fun onCreateView(

@@ -11,4 +11,5 @@ interface Navigator {
     fun goToUserScreen(firstName: String, lastName: String, image: String)
 
     fun goToAuthScreen()
+
 }

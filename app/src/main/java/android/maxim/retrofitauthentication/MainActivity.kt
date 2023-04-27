@@ -9,6 +9,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity(), Navigator {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity(), Navigator {
         launchFragment(AuthFragment())
     }
 
-    fun launchFragment(fragment: Fragment) {
+    private fun launchFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .addToBackStack(null)
