@@ -1,4 +1,4 @@
-package android.maxim.retrofitauthentication.ui.userscreen
+package android.maxim.retrofitauthentication.ui
 
 import android.maxim.myapplication.databinding.FragmentUserBinding
 import android.maxim.retrofitauthentication.navigator.navigator

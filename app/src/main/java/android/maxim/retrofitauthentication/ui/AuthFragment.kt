@@ -1,4 +1,4 @@
-package android.maxim.retrofitauthentication.ui.authscreen
+package android.maxim.retrofitauthentication.ui
 
 import android.maxim.myapplication.databinding.FragmentAuthBinding
 import android.maxim.retrofitauthentication.model.RequestData
@@ -9,18 +9,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AuthFragment: Fragment() {
 
     private lateinit var binding: FragmentAuthBinding
+    @Inject
     lateinit var userApi: UserApi
 
     override fun onCreateView(
@@ -32,21 +32,6 @@ class AuthFragment: Fragment() {
 
         binding.btnEnter.setOnClickListener { enter() }
 
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
-
-        val client = OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .build()
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyjson.com")
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        userApi = retrofit.create(UserApi::class.java)
-
         return binding.root
     }
 
@@ -54,8 +39,8 @@ class AuthFragment: Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             val user = userApi.auth(
                 RequestData(
-                    "acharlota",
-                    "M9lbMdydMN"
+                    binding.tvUsername.text.toString(),
+                    binding.tvPassword.text.toString()
                 )
             )
             runBlocking {

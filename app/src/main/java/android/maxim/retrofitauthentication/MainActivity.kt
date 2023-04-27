@@ -2,12 +2,14 @@ package android.maxim.retrofitauthentication
 
 import android.maxim.myapplication.R
 import android.maxim.retrofitauthentication.navigator.Navigator
-import android.maxim.retrofitauthentication.ui.authscreen.AuthFragment
-import android.maxim.retrofitauthentication.ui.userscreen.UserFragment
+import android.maxim.retrofitauthentication.ui.AuthFragment
+import android.maxim.retrofitauthentication.ui.UserFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), Navigator {
 
     override fun onCreate(savedInstanceState: Bundle?) {
