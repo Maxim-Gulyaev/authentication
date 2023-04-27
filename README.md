@@ -1,7 +1,7 @@
 # retrofit-authentication
 Training app for authentication. Uses Retrofit, Hilt, Picasso.
 
-Credentials samples:
+**Credentials samples:**
 Username              Password
 acharlota             M9lbMdydMN
 hbingley1             CQutx25i8r
