@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -43,10 +42,8 @@ class AuthFragment: Fragment() {
                     binding.tvPassword.text.toString()
                 )
             )
-            runBlocking {
-                binding.apply {
-                    navigator().goToUserScreen(user.firstName, user.lastName, user.image)
-                }
+            requireActivity().runOnUiThread {
+                navigator().goToUserScreen(user.firstName, user.lastName, user.image)
             }
         }
 
